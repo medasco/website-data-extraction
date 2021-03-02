@@ -1,0 +1,81 @@
+[scrapy.utils.log] INFO: Scrapy 2.3.0 started (bot: WebScraper)
+[scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.1.1, Platform Windows-10-10.0.18362-SP0
+[scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+[scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'WebScraper',
+ 'LOG_LEVEL': 'WARNING',
+ 'NEWSPIDER_MODULE': 'WebScraper.spiders',
+ 'SPIDER_MODULES': ['WebScraper.spiders']}
+[scrapy.extensions.telnet] INFO: Telnet Password: 31d157e7491a8545
+[scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+[twisted] CRITICAL: Unhandled error in Deferred:
+[twisted] CRITICAL: Unhandled error in Deferred:
+[twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\common\service.py", line 72, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\subprocess.py", line 854, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\subprocess.py", line 1307, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\spiders\__init__.py", line 49, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\spiders\dynamodb.py", line 18, in __init__
+    super().__init__()
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\psw_spider.py", line 29, in __init__
+    self.browser = ChromeDriver()
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\web_drivers.py", line 30, in __init__
+    super().__init__(executable_path=chromedriver, chrome_options=options)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 73, in __init__
+    self.service.start()
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\common\service.py", line 81, in start
+    raise WebDriverException(
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+[twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\common\service.py", line 72, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\subprocess.py", line 854, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\subprocess.py", line 1307, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\spiders\__init__.py", line 49, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\spiders\dynamodb.py", line 18, in __init__
+    super().__init__()
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\psw_spider.py", line 29, in __init__
+    self.browser = ChromeDriver()
+  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\web_drivers.py", line 30, in __init__
+    super().__init__(executable_path=chromedriver, chrome_options=options)
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 73, in __init__
+    self.service.start()
+  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\common\service.py", line 81, in start
+    raise WebDriverException(
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
