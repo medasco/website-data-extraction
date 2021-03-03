@@ -11,7 +11,7 @@ from itertools import product
 
 class dynamoDBSpider(WebDataSpider):
     """ dynamoDB airport charts spider """
-    name = 'dynamoDB'
+    name = 'dynamodb'
     version = '1.0.0'
 
     def __init__(self):

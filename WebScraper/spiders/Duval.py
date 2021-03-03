@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 
 class DuvalSpider(WebDataSpider):
     """ Duval County Clerk of Courts """
-    name = 'Duval'
+    name = 'duval'
     version = '1.0.0'
 
     def __init__(self):

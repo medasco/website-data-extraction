@@ -12,7 +12,7 @@ from itertools import product
 
 class AmazonSpider(WebDataSpider):
     """ Amazon Categories spider """
-    name = 'Amazon'
+    name = 'amazon'
     version = '1.0.0'
 
     def __init__(self):

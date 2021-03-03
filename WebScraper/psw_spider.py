@@ -69,7 +69,8 @@ class WebDataSpider(scrapy.Spider):
 
 
 alpha3 = {
-        'CreateFBPage' : 'CreateFBPage', # Greenmamastore (scraping jobs)
-        'Amazon' : 'Amazon', # Greenmamastore (scraping jobs)
-        'Duval' : 'Duval', # LoveClientsInc (scraping jobs)
+        'createfbpage': 'createfbpage',  # Greenmamastore (scraping jobs)
+        'amazon': 'amazon',  # Greenmamastore (scraping jobs)
+        'duval': 'duval',  # LoveClientsInc (scraping jobs)
+        'twitch': 'twitch',
 }

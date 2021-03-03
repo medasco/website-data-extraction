@@ -11,7 +11,7 @@ from itertools import product
 
 class CreateFBPageSpider(WebDataSpider):
     """ CreateFBPage airport charts spider """
-    name = 'CreateFBPage'
+    name = 'createfbpage'
     version = '1.0.0'
 
     def __init__(self):

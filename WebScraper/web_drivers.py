@@ -24,8 +24,10 @@ class ChromeDriver(webdriver.Chrome):
         # options.add_argument("--start-maximized")
         options.add_argument("--window-position=500,0")
         options.add_argument("window-size=1420,1080")
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--ignore-ssl-errors')
+        chromedriver = os.path.abspath(''.join([os.curdir, '/Webscraper/driver/chromedriver.exe']))
         # chromedriver = os.path.abspath(os.getcwd() + "\\AerodromeChartScraper\\driver\\chromedriver.exe") #SPIDERS_PATH + ".\\driver\\chromedriver.exe"
-        chromedriver = os.path.abspath(os.curdir + ".\\driver\\chromedriver.exe")
         # print("\n=========================== {} ===========================".format(chromedriver))
         super().__init__(executable_path=chromedriver, chrome_options=options)
 
@@ -35,9 +37,9 @@ class ChromeDriver(webdriver.Chrome):
     def wait_until_located(self, selector_type, value: str, timeout: int):
         """ Explicitly wait until an element is located """
         element = None
-        if selector_type is 'XPATH':
+        if selector_type == 'XPATH':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.XPATH, value)))
-        elif selector_type is 'CSS':
+        elif selector_type == 'CSS':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.CSS_SELECTOR, value)))
         else:
             print("Specify a valid parameter!")
@@ -77,9 +79,9 @@ class FirefoxDriver(webdriver.Firefox):
     def wait_until_located(self, selector_type, value: str, timeout: int):
         """ Explicitly wait until an element is located """
         element = None
-        if selector_type is 'XPATH':
+        if selector_type == 'XPATH':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.XPATH, value)))
-        elif selector_type is 'CSS':
+        elif selector_type == 'CSS':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.CSS_SELECTOR, value)))
         else:
             print("Specify a valid parameter!")
@@ -117,9 +119,9 @@ class PhantomJSDriver(webdriver.PhantomJS):
     def wait_until_located(self, selector_type, value: str, timeout: int):
         """ Explicitly wait until an element is located """
         element = None
-        if selector_type is 'XPATH':
+        if selector_type == 'XPATH':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.XPATH, value)))
-        elif selector_type is 'CSS':
+        elif selector_type == 'CSS':
             element = WebDriverWait(self, timeout).until(ec.presence_of_element_located((By.CSS_SELECTOR, value)))
         else:
             print("Specify a valid parameter!")
