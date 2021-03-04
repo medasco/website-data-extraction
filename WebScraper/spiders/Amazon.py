@@ -1,7 +1,7 @@
 import scrapy
 from selenium.webdriver import ActionChains
 from WebScraper.psw_spider import WebDataSpider
-from WebScraper.items import WebItem
+from WebScraper.items import DataItem
 from WebScraper.web_drivers import ChromeDriver
 from WebScraper.pipelines import DataPipeline
 from selenium.webdriver.common.keys import Keys
@@ -83,7 +83,7 @@ class AmazonSpider(WebDataSpider):
 
         for category, subcategory, subsubcategory in categories_list:
                     
-            web_item = WebItem()
+            web_item = DataItem()
 
             web_item['spider'] = self.spider_name
             web_item['category'] = category

@@ -23,8 +23,9 @@ class DataPipeline(object):
 
     def __init__(self, data_list):
         self.dataList = data_list
-        # self.webDataFrame = pd.DataFrame(data_list, columns=['country', 'icao', 'link', 'file', 'desc', 'club', 'category'])
-        self.webDataFrame = pd.DataFrame(data_list, columns=['spider', 'category', 'subcategory', 'subsubcategory']) # CategoriesAmazon
+        # self.webDataFrame = pd.DataFrame(data_list, columns=['country', 'icao', 'link', 'file', 'desc', 'club', 'category'])  # aerodrome
+        # self.webDataFrame = pd.DataFrame(data_list, columns=['spider', 'category', 'subcategory', 'subsubcategory'])  # amazon
+        self.webDataFrame = pd.DataFrame(data_list, columns=['name', 'age', 'birthday', 'nationality', 'hometown', 'ethnicity', 'streams', 'formerteams'])  # twitch
 
     def process_charts(self):
         pass

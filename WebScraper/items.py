@@ -8,7 +8,7 @@
 import scrapy
 
 
-class WebItem(scrapy.Item):
+class DataItem(scrapy.Item):
     """ Class representing an Airport Chart item """
     # country = scrapy.Field()
     # category = scrapy.Field()
@@ -18,8 +18,18 @@ class WebItem(scrapy.Item):
     # file = scrapy.Field()
     # club = scrapy.Field()
 
-    # CategoriesAmazon
+    # amazon
     spider = scrapy.Field()
     category = scrapy.Field()
     subcategory = scrapy.Field()
     subsubcategory = scrapy.Field()
+
+    # twitch
+    name = scrapy.Field()
+    age = scrapy.Field()
+    birthday = scrapy.Field()
+    nationality = scrapy.Field()
+    hometown = scrapy.Field()
+    ethnicity = scrapy.Field()
+    streams = scrapy.Field()
+    formerteams = scrapy.Field()

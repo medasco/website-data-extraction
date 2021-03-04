@@ -2,7 +2,7 @@ import scrapy
 from math import ceil
 from selenium.webdriver import ActionChains
 from WebScraper.psw_spider import WebDataSpider
-from WebScraper.items import WebItem
+from WebScraper.items import DataItem
 from WebScraper.pipelines import DataPipeline
 from WebScraper.web_drivers import ChromeDriver
 from selenium.webdriver.common.keys import Keys
@@ -130,7 +130,7 @@ class DuvalSpider(WebDataSpider):
             self.browser.wait(3)
 
         
-        # web_item = WebItem()
+        # web_item = DataItem()
 
         # web_item['country'] = self.country_name
         # web_item['icao'] = icao

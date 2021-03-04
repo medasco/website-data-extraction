@@ -22,8 +22,8 @@ class ChromeDriver(webdriver.Chrome):
         })
 
         # options.add_argument("--start-maximized")
-        options.add_argument("--window-position=500,0")
-        options.add_argument("window-size=1420,1080")
+        options.add_argument("--window-position=545,0")
+        options.add_argument("window-size=1380,1080")
         options.add_argument('--ignore-certificate-errors')
         options.add_argument('--ignore-ssl-errors')
         chromedriver = os.path.abspath(''.join([os.curdir, '/Webscraper/driver/chromedriver.exe']))
