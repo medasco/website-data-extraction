@@ -73,4 +73,5 @@ alpha3 = {
         'amazon': 'amazon',  # Greenmamastore (scraping jobs)
         'duval': 'duval',  # LoveClientsInc (scraping jobs)
         'twitch': 'twitch',
+        'streamers': 'streamers'
 }

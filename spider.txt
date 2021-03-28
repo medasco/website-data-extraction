@@ -1,19 +1,19 @@
 [scrapy.utils.log] INFO: Scrapy 2.3.0 started (bot: WebScraper)
-[scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.1.1, Platform Windows-10-10.0.18362-SP0
+[scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.1.1, Platform Windows-10-10.0.19041-SP0
 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
 [scrapy.crawler] INFO: Overridden settings:
 {'BOT_NAME': 'WebScraper',
  'LOG_LEVEL': 'WARNING',
  'NEWSPIDER_MODULE': 'WebScraper.spiders',
  'SPIDER_MODULES': ['WebScraper.spiders']}
-[scrapy.extensions.telnet] INFO: Telnet Password: 1ddfd587a962de36
+[scrapy.extensions.telnet] INFO: Telnet Password: d2914eb646eaf8f0
 [scrapy.middleware] INFO: Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
  'scrapy.extensions.logstats.LogStats',
  'scrapy.extensions.telnet.TelnetConsole']
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": ["--window-position=545,0", "window-size=1380,1080", "--ignore-certificate-errors", "--ignore-ssl-errors"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": ["--window-position=545,0", "window-size=1380,1080", "--ignore-certificate-errors", "--ignore-ssl-errors"]}}}
-[urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:49368
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session HTTP/1.1" 200 755
+[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:50336/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": ["--headless", "--disable-gpu", "--window-position=960,0", "window-size=960,1080"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": ["--headless", "--disable-gpu", "--window-position=960,0", "window-size=960,1080"]}}}
+[urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:50336
+[urllib3.connectionpool] DEBUG: http://127.0.0.1:50336 "POST /session HTTP/1.1" 200 752
 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
@@ -38,137 +38,27 @@
 [scrapy.core.engine] INFO: Spider opened
 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-[webSpiderLog] INFO: twitch : Start Request : https://toptwitchstreamers.com/streamers/
+[webSpiderLog] INFO: streamers : Start Request : https://toptwitchstreamers.com/streamers/
 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://toptwitchstreamers.com/streamers/> (referer: None)
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
+[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:50336/session/3e6b2c609f64bdfe7bb1fef5391652bb/url {"url": "https://toptwitchstreamers.com/streamers/"}
+[urllib3.connectionpool] DEBUG: http://127.0.0.1:50336 "POST /session/3e6b2c609f64bdfe7bb1fef5391652bb/url HTTP/1.1" 200 14
 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/element {"using": "xpath", "value": "//div[@class=\"custom-pagination\"]/a[1]"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/element HTTP/1.1" 200 88
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "32494b6b-a5b5-4838-99cc-2cf564d65818", "element-6066-11e4-a52e-4f735466cecf": "32494b6b-a5b5-4838-99cc-2cf564d65818"}, "href"]}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/execute/sync HTTP/1.1" 200 60
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/element {"using": "xpath", "value": "//div[@class=\"custom-pagination\"]/a[3]"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/element HTTP/1.1" 200 88
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "3effad94-0ad1-491f-987d-8462a14b426c", "element-6066-11e4-a52e-4f735466cecf": "3effad94-0ad1-491f-987d-8462a14b426c"}, "href"]}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/execute/sync HTTP/1.1" 200 61
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/1"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/2"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/3"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/4"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/5"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/6"}
-[urllib3.connectionpool] DEBUG: http://127.0.0.1:49368 "POST /session/5dbe7bd3dfcb8e5440abf319add59d89/url HTTP/1.1" 200 14
-[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
-[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89/url {"url": "https://toptwitchstreamers.com/streamers/page/7"}
-[scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
-[scrapy.core.scraper] ERROR: Spider error processing <GET https://toptwitchstreamers.com/streamers/> (referer: None)
-Traceback (most recent call last):
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
-    httplib_response = self._make_request(
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 426, in _make_request
-    six.raise_from(e, None)
-  File "<string>", line 3, in raise_from
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 421, in _make_request
-    httplib_response = conn.getresponse()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 1347, in getresponse
-    response.begin()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 307, in begin
-    version, status, reason = self._read_status()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 268, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\socket.py", line 669, in readinto
-    return self._sock.recv_into(b)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
-    current.result = callback(current.result, *args, **kw)
-  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\psw_spider.py", line 50, in scrape
-    self.parse(response)
-  File "C:\Users\Dasco\_Projects\Core\website-data-extraction\WebScraper\spiders\twitch.py", line 44, in parse
-    self.browser.get(self.url + 'page/' + next_page)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
-    self.execute(Command.GET, {'url': url})
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
-    return self._request(command_info[0], url, body=data)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
-    resp = self._conn.request(method, url, body=body, headers=headers)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\request.py", line 79, in request
-    return self.request_encode_body(
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\request.py", line 171, in request_encode_body
-    return self.urlopen(method, url, **extra_kw)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\poolmanager.py", line 336, in urlopen
-    response = conn.urlopen(method, u.request_uri, **kw)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
-    retries = retries.increment(
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\util\retry.py", line 403, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\packages\six.py", line 734, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
-    httplib_response = self._make_request(
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 426, in _make_request
-    six.raise_from(e, None)
-  File "<string>", line 3, in raise_from
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\site-packages\urllib3\connectionpool.py", line 421, in _make_request
-    httplib_response = conn.getresponse()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 1347, in getresponse
-    response.begin()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 307, in begin
-    version, status, reason = self._read_status()
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\http\client.py", line 268, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-  File "C:\Users\Dasco\_DevTools\Anaconda\envs\scrape\lib\socket.py", line 669, in readinto
-    return self._sock.recv_into(b)
-urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-[scrapy.core.engine] INFO: Closing spider (shutdown)
-[scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
-[selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://127.0.0.1:49368/session/5dbe7bd3dfcb8e5440abf319add59d89 {}
-[urllib3.connectionpool] DEBUG: Starting new HTTP connection (2): 127.0.0.1:49368
-[urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/5dbe7bd3dfcb8e5440abf319add59d89'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
-[urllib3.connectionpool] WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002595B761700>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5dbe7bd3dfcb8e5440abf319add59d89
-[urllib3.connectionpool] DEBUG: Starting new HTTP connection (3): 127.0.0.1:49368
-[urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/5dbe7bd3dfcb8e5440abf319add59d89'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
-[urllib3.connectionpool] WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002595B70F640>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5dbe7bd3dfcb8e5440abf319add59d89
-[urllib3.connectionpool] DEBUG: Starting new HTTP connection (4): 127.0.0.1:49368
-[urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/5dbe7bd3dfcb8e5440abf319add59d89'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
-[urllib3.connectionpool] WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002595B75B700>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5dbe7bd3dfcb8e5440abf319add59d89
-[urllib3.connectionpool] DEBUG: Starting new HTTP connection (5): 127.0.0.1:49368
+[webSpiderLog] INFO: streamers : Parsing OK : https://toptwitchstreamers.com/streamers/
+[scrapy.core.engine] INFO: Closing spider (finished)
 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 236,
  'downloader/request_count': 1,
  'downloader/request_method_count/GET': 1,
- 'downloader/response_bytes': 20481,
+ 'downloader/response_bytes': 21029,
  'downloader/response_count': 1,
  'downloader/response_status_count/200': 1,
- 'elapsed_time_seconds': 95.009802,
- 'finish_reason': 'shutdown',
- 'finish_time': datetime.datetime(2021, 3, 4, 6, 59, 46, 747077),
- 'log_count/ERROR': 1,
- 'log_count/WARNING': 3,
+ 'elapsed_time_seconds': 21.078928,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 3, 27, 8, 15, 47, 286441),
  'response_received_count': 1,
  'scheduler/dequeued': 1,
  'scheduler/dequeued/memory': 1,
  'scheduler/enqueued': 1,
  'scheduler/enqueued/memory': 1,
- 'spider_exceptions/ProtocolError': 1,
- 'start_time': datetime.datetime(2021, 3, 4, 6, 58, 11, 737275)}
-[scrapy.core.engine] INFO: Spider closed (shutdown)
+ 'start_time': datetime.datetime(2021, 3, 27, 8, 15, 26, 207513)}
+[scrapy.core.engine] INFO: Spider closed (finished)

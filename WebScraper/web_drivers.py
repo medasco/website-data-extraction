@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as ec
 from time import sleep
-from wsm.config import SPIDERS_PATH, PROJECT_PATH, CSV_PATH, REF_PATH, DOWNLOAD_PATH
+from wsm.config import SPIDERS_PATH, PROJECT_PATH, SAVING_PATH, REF_PATH, DOWNLOAD_PATH
 
 
 class ChromeDriver(webdriver.Chrome):
@@ -13,7 +13,7 @@ class ChromeDriver(webdriver.Chrome):
     def __init__(self, country="Default"):
         options = webdriver.ChromeOptions()
         prefs = {"download.default_directory": DOWNLOAD_PATH + country}
-        # options.set_headless(headless=True)
+        options.set_headless(headless=True)
         options.add_experimental_option("prefs", prefs)
         
         # 'Allow Notifications' Popup Window: Pass the argument 1 to allow and 2 to block
@@ -22,10 +22,16 @@ class ChromeDriver(webdriver.Chrome):
         })
 
         # options.add_argument("--start-maximized")
-        options.add_argument("--window-position=545,0")
-        options.add_argument("window-size=1380,1080")
-        options.add_argument('--ignore-certificate-errors')
-        options.add_argument('--ignore-ssl-errors')
+        options.add_argument("--window-position=960,0")
+        options.add_argument("window-size=960,1080")
+        # options.add_argument('--ignore-certificate-errors')
+        # options.add_argument('--ignore-ssl-errors')
+        # options.add_argument("--no-sandbox")
+        # options.add_argument("--disable-infobars")
+        # options.add_argument("--disable-dev-shm-usage")
+        # options.add_argument("--disable-browser-side-navigation")
+        # options.add_argument("--disable-gpu")
+        # options.add_argument("enable-automation")
         chromedriver = os.path.abspath(''.join([os.curdir, '/Webscraper/driver/chromedriver.exe']))
         # chromedriver = os.path.abspath(os.getcwd() + "\\AerodromeChartScraper\\driver\\chromedriver.exe") #SPIDERS_PATH + ".\\driver\\chromedriver.exe"
         # print("\n=========================== {} ===========================".format(chromedriver))
