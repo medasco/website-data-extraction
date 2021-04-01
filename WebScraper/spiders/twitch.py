@@ -26,7 +26,6 @@ class TwitchSpider(WebDataSpider):
         """ Parsing callback function """
 
         list_of_data = []
-        info_list = []
 
         # Start the selenium Chrome driver
         self.browser.get(response.url)
@@ -38,14 +37,13 @@ class TwitchSpider(WebDataSpider):
         last_page = page_nums.rsplit('/', 2)
         pages = []
 
-        info_list = []
         for pagination in range(0, int(last_page[1])):
             next_page = str(pagination + 1)
             make_page = '/'.join([last_page[0], next_page])
             pages.append(make_page)
 
         # Page creation from the last page available 
-        for page in pages[:1]:  # TODO manipulate pages if Exception Timeout
+        for page in pages[35:]:  # TODO
             current_page = page.split('page/')[1].replace('/', '')
             
             # Get pages
@@ -54,7 +52,7 @@ class TwitchSpider(WebDataSpider):
 
             # Get each streamer's link on each page
             streamers = self.browser.find_elements_by_xpath('//*[@id="custom-cat-content-area"]/div/div/a')
-            for streamer in streamers[:1]:
+            for streamer in streamers:
                 
                 # Get streamer's details
                 data_item = DataItem()
@@ -129,76 +127,19 @@ class TwitchSpider(WebDataSpider):
                                 data_item['Team'] = info_value.text
 
                 # Streamer's info section
-                streamers_id = browser.find_element_by_xpath('//*[@id="main-content"]/div/article').get_attribute('id')
-                sections = browser.find_elements_by_xpath('//*[@id= '+'"'+ str(streamers_id) +'"'+ ']/div/div[1]/div/div[6]')
-                browser.wait(2)
-
-                for section in sections:
-                    block = section.get_attribute('class')
-                    
-                    if 'accomp_list' in block:
-                        accomplishments = []
-                        label = section.find_element_by_tag_name('h4')
-                        values = section.find_elements_by_xpath('//ul/li/span')
-                        print('test')
-                        for value in values:
-                            accomplishments.append(value.text)
-                        data_item['Accomplishments'] = accomplishments
-                        print([alias, label.text, data_item['Accomplishments']])
-
-                    elif 'quote_list' in block:
-                        label = section.find_element_by_tag_name('h4')
-                        value = section.find_element_by_tag_name('p')
-                        data_item['Quotes'] = value.text
-                        print([alias, label.text, data_item['Quotes']])
-
-                    elif 'sources_list' in block:
-                        sources = []
-                        label = section.find_element_by_tag_name('h4')
-                        source = section.find_elements_by_tag_name('a')
-                        for value, href in list(zip(values, source)):
-                            link = href.get_attribute('href')
-                            sources.append([value.text, link])
-                        data_item['Sources'] = sources
-                        print([alias, label.text, data_item['Sources']])
-                    
-                    elif block == 'streamers-info-section':
-                        label = section.find_element_by_tag_name('h4')
-                        values = section.find_elements_by_xpath('div[@class="streamers-more-value"]')
-                        for value in values:
-                            print([alias, label.text, value.text])
-                            if label.text == 'FAMILY':
-                                data_item['Family'] = value.text
-
-                            elif label.text == 'NAME ORIGINS':
-                                data_item['NameOrigins'] = value.text
-                            
-                            elif label.text == 'PROFESSIONAL GAMING':
-                                data_item['ProfessionalGaming'] = value.text
-
-                            elif label.text == 'STREAMING HOURS':
-                                data_item['StreamingHours'] = value.text
-
-                            elif label.text == 'REALTIONSHIPS':
-                                data_item['Relationships'] = value.text
-
-                            elif label.text == 'INCOME':
-                                data_item['Income'] = value.text
-
-                            elif label.text == 'OTHER INTERESTS':
-                                data_item['OtherInterests'] = value.text
-
-                            elif label.text == 'INTERESTING FACTS':
-                                data_item['InterestingFacts'] = value.text
-
-                            elif label.text == 'ADVICE FOR STREAMERS':
-                                data_item['AdviceForStreamers'] = value.text
-
+                info_section = []
+                labels = browser.find_elements_by_xpath('//div[@class="streamers-info-section"]/div[contains(@class, "streamers-info-block")]')
+                for label in labels:
+                    info_section.append(label.text)
+                
+                data_item['InfoSection'] = info_section
+                print(info_section)
+                
                 list_of_data.append(data_item)
                 browser.close()
 
             self.data_mgr = TwitchPipeline(list_of_data)
-            # self.data_mgr.save_data_list('streamers')
+            self.data_mgr.save_data_list('twitchStreamers')
 
         self.data_mgr.print_data_list()
 
@@ -236,6 +177,5 @@ class TwitchPipeline(DataPipeline):
         else:
             print('\nAppending data into an existing CSV file [{0}]...'.format(x))
             self.webDataFrame.to_csv(f, mode='a', encoding='utf-8', index=False, header=False)
-            # self.webDataFrame.drop_duplicates()
 
         print('Finished writing the webiste data list file: {0}\n'.format(os.path.abspath(f)))

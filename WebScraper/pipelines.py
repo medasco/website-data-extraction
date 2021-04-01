@@ -25,10 +25,10 @@ class DataPipeline(object):
         self.dataList = data_list
         # self.webDataFrame = pd.DataFrame(data_list, columns=['country', 'icao', 'link', 'file', 'desc', 'club', 'category'])  # aerodrome
         # self.webDataFrame = pd.DataFrame(data_list, columns=['spider', 'category', 'subcategory', 'subsubcategory'])  # amazon
-        self.webDataFrame = pd.DataFrame(data_list, columns=['Page', 'Alias', 'Name', 'Age', 'Birthday', 'Nationality', 'Hometown', 'Ethnicity',
-                                                             'Streams', 'FormerTeams', 'Team', 'TwitchStatus', 'TwitchFollowers', 'TwitchChannelViews',
-                                                             'Family', 'NameOrigins', 'GamingOrigins', 'ProfessionalGaming', 'StreamingHours', 'Accomplishments',
-                                                             'Quotes', 'Relationships', 'Income', 'OtherInterests', 'Sources', 'InterestingFacts', 'AdviceForStreamers'
+        self.webDataFrame = pd.DataFrame(data_list, columns=['Page','Alias', 'Name', 'Age', 'Birthday', 'Nationality', 'Hometown', 'Ethnicity',
+                                                             'Streams', 'FormerTeams', 'Team', 'TwitchStatus', 'TwitchFollowers', 'TwitchChannelViews', 'InfoSection'
+                                                            #  'Family', 'NameOrigins', 'GamingOrigins', 'ProfessionalGaming', 'StreamingHours', 'Accomplishments',
+                                                            #  'Quotes', 'Relationships', 'Income', 'OtherInterests', 'Sources', 'InterestingFacts', 'AdviceForStreamers'
                                                              ])  # twitch
 
     def process_data(self):
@@ -45,12 +45,14 @@ class DataPipeline(object):
         print('\nSaving data into a CSV file [{0}]...'.format(x))
         self.webDataFrame.to_csv(f, index=False)
 
-        print('Finished writing the webiste data list file: {0}\n'.format(os.path.abspath(f)))
-    
+        print('Finished writing the webiste data list file: {0}\n'.format(
+            os.path.abspath(f)))
+
     def remove_duplicate_rows(self, file_name, out_file):
         df = pd.read_csv(file_name)
         df.drop_duplicates(inplace=True)
         df.to_csv(out_file, index=False)
+
 
 class JsonPipeline(object):
     """ A class that needs data to be written as JSON file """
@@ -74,6 +76,6 @@ class JsonPipeline(object):
                 json.dump(self.old, f, indent=2)
 
         else:
-            json_file = {'data':[self.data]}
+            json_file = {'data': [self.data]}
             with open(file_name, 'w') as f:
                 json.dump(json_file, f, indent=2)
