@@ -30,7 +30,7 @@ class TwitchSpider(WebDataSpider):
         # Start the selenium Chrome driver
         self.browser.get(response.url)
 
-        self.browser.execute_script("window.scrollTo(document.body.scrollWidth, 0);")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         self.browser.wait(3)
         
         page_nums = self.browser.find_element_by_xpath('//div[@class="custom-pagination"]/a[3]').get_attribute('href')

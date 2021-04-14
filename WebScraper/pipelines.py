@@ -7,6 +7,7 @@
 
 
 import os
+import json
 
 import pandas as pd
 
@@ -25,11 +26,9 @@ class DataPipeline(object):
         self.dataList = data_list
         # self.webDataFrame = pd.DataFrame(data_list, columns=['country', 'icao', 'link', 'file', 'desc', 'club', 'category'])  # aerodrome
         # self.webDataFrame = pd.DataFrame(data_list, columns=['spider', 'category', 'subcategory', 'subsubcategory'])  # amazon
-        self.webDataFrame = pd.DataFrame(data_list, columns=['Page','Alias', 'Name', 'Age', 'Birthday', 'Nationality', 'Hometown', 'Ethnicity',
-                                                             'Streams', 'FormerTeams', 'Team', 'TwitchStatus', 'TwitchFollowers', 'TwitchChannelViews', 'InfoSection'
-                                                            #  'Family', 'NameOrigins', 'GamingOrigins', 'ProfessionalGaming', 'StreamingHours', 'Accomplishments',
-                                                            #  'Quotes', 'Relationships', 'Income', 'OtherInterests', 'Sources', 'InterestingFacts', 'AdviceForStreamers'
-                                                             ])  # twitch
+        self.webDataFrame = pd.DataFrame(data_list, columns=['Page','Alias', 'Name', 'Age', 'Birthday', 'Nationality',
+                                                             'Hometown', 'Ethnicity', 'Streams', 'FormerTeams', 'Team',
+                                                             'TwitchStatus', 'TwitchFollowers', 'TwitchChannelViews', 'InfoSection'])  # twitch
 
     def process_data(self):
         pass

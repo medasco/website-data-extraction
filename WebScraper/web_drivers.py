@@ -13,7 +13,7 @@ class ChromeDriver(webdriver.Chrome):
     def __init__(self, country="Default"):
         options = webdriver.ChromeOptions()
         prefs = {"download.default_directory": DOWNLOAD_PATH + country}
-        options.set_headless(headless=True)
+        # options.set_headless(headless=True)
         options.add_experimental_option("prefs", prefs)
         
         # 'Allow Notifications' Popup Window: Pass the argument 1 to allow and 2 to block
