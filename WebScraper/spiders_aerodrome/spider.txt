@@ -1,0 +1,78 @@
+[scrapy.utils.log] INFO: Scrapy 2.3.0 started (bot: AerodromeChartScraper)
+[scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.1.1, Platform Windows-10-10.0.18362-SP0
+[scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+[scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'AerodromeChartScraper',
+ 'LOG_LEVEL': 'WARNING',
+ 'NEWSPIDER_MODULE': 'AerodromeChartScraper.spiders',
+ 'SPIDER_MODULES': ['AerodromeChartScraper.spiders',
+                    'AerodromeChartScraper.spiders_parking',
+                    'AerodromeChartScraper.spiders_supplement',
+                    'AerodromeChartScraper.scraping_job']}
+[scrapy.extensions.telnet] INFO: Telnet Password: 471fd5fcaecb59bf
+[scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+[selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:54601/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values.notifications": 2}, "extensions": [], "args": []}}}
+[urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:54601
+[urllib3.connectionpool] DEBUG: http://127.0.0.1:54601 "POST /session HTTP/1.1" 500 1020
+[selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+[twisted] CRITICAL: Unhandled error in Deferred:
+[twisted] CRITICAL: Unhandled error in Deferred:
+[twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\spiders\__init__.py", line 49, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\spiders\Argentina.py", line 16, in __init__
+    super().__init__()
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\psw_spider.py", line 29, in __init__
+    self.browser = ChromeDriver()
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\web_drivers.py", line 28, in __init__
+    super().__init__(executable_path=chromedriver, chrome_options=options)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 85
+
+[twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\scrapy\spiders\__init__.py", line 49, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\spiders\Argentina.py", line 16, in __init__
+    super().__init__()
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\psw_spider.py", line 29, in __init__
+    self.browser = ChromeDriver()
+  File "C:\Users\DascoBrothers\_Projects\Aerodrome Charts Manager\AerodromeChartScraper\web_drivers.py", line 28, in __init__
+    super().__init__(executable_path=chromedriver, chrome_options=options)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DascoBrothers\_DevTools\Anaconda\envs\scrape\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 85
+
