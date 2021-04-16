@@ -1,6 +1,6 @@
 import scrapy
 from selenium.webdriver import ActionChains
-from WebScraper.psw_spider import WebDataSpider
+from WebScraper.web_spider import WebDataSpider
 from WebScraper.items import DataItem
 from WebScraper.web_drivers import ChromeDriver
 from selenium.webdriver.common.keys import Keys

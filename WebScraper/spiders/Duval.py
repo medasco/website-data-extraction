@@ -1,7 +1,7 @@
 import scrapy
 from math import ceil
 from selenium.webdriver import ActionChains
-from WebScraper.psw_spider import WebDataSpider
+from WebScraper.web_spider import WebDataSpider
 from WebScraper.items import DataItem
 from WebScraper.pipelines import DataPipeline
 from WebScraper.web_drivers import ChromeDriver
