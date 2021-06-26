@@ -5,9 +5,6 @@ from WebScraper.items import DataItem
 from WebScraper.web_drivers import ChromeDriver
 from WebScraper.pipelines import DataPipeline
 from selenium.webdriver.common.keys import Keys
-from docx import Document
-from wsm.config import DOCX_PATH
-from itertools import product
 
 
 class AmazonSpider(WebDataSpider):
